@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.10.10 on win32)" generated="20230802 10:49:18.509" rpa="false" schemaversion="4">
+<suite id="s1" name="ATV" source="C:\Users\park3\OneDrive\바탕 화면\자동화\A.tv\ATV.robot">
+<kw name="에이닷 실행" library="ATV" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=${deviceName}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<arg>automationName=UIAutomator2</arg>
+<arg>noReset=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20230802 10:49:27.213" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20230802 10:49:27.213" endtime="20230802 10:49:27.280"/>
+</kw>
+<msg timestamp="20230802 10:49:27.282" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20230802 10:49:27.283" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.skt.nugu.apollo' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\park3\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s R5CR8050X6P shell am start -W -n com.skt.nugu.apollo/com.skt.nugu.visual.home.HomeActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 255'; Command output: 
+Exception occurred while executing 'start':
+java.lang.SecurityException: Permission Denial: starting Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.skt.nugu.apollo/com.skt.nugu.visual.home.HomeActivity } from null (pid=14411, uid=2000) not exported from uid 10468
+	at com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1305)
+	at com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1388)
+	at com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:1026)
+	at com.android.server.wm.ActivityTaskManagerService.startActivityAndWait(ActivityTaskManagerService.java:2206)
+	at com.android.server.am.ActivityManagerService.startActivityAndWait(ActivityManagerService.java:3739)
+	at com.android.server.am.ActivityManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:651)
+	at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:222)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:11193)
+	at android.os.Binder.shellCommand(Binder.java:1085)
+	at android.os.Binder.onTransact(Binder.java:903)
+	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:5643)
+	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:3134)
+	at android.os.Binder.execTransactInternal(Binder.java:1321)
+	at android.os.Binder.execTransact(Binder.java:1280)
+
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.skt.nugu.apollo' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\park3\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s R5CR8050X6P shell am start -W -n com.skt.nugu.apollo/com.skt.nugu.visual.home.HomeActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 255'; Command output: 
+Exception occurred while executing 'start':
+java.lang.SecurityException: Permission Denial: starting Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.skt.nugu.apollo/com.skt.nugu.visual.home.HomeActivity } from null (pid=14411, uid=2000) not exported from uid 10468
+	at com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1305)
+	at com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1388)
+	at com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:1026)
+	at com.android.server.wm.ActivityTaskManagerService.startActivityAndWait(ActivityTaskManagerService.java:2206)
+	at com.android.server.am.ActivityManagerService.startActivityAndWait(ActivityManagerService.java:3739)
+	at com.android.server.am.ActivityManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:651)
+	at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:222)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:11193)
+	at android.os.Binder.shellCommand(Binder.java:1085)
+	at android.os.Binder.onTransact(Binder.java:903)
+	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:5643)
+	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:3134)
+	at android.os.Binder.execTransactInternal(Binder.java:1321)
+	at android.os.Binder.execTransact(Binder.java:1280)
+
+    at getResponseForW3CError (C:\Users\park3\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\errors.js:1073:9)
+    at asyncHandler (C:\Users\park3\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:491:57)</msg>
+<status status="FAIL" starttime="20230802 10:49:18.960" endtime="20230802 10:49:27.285"/>
+</kw>
+<status status="FAIL" starttime="20230802 10:49:18.960" endtime="20230802 10:49:27.285"/>
+</kw>
+<test id="s1-t1" name="A. tv aar 이 포함 된 에이닷 앱 종료" line="45">
+<tag>General</tag>
+<status status="FAIL" starttime="20230802 10:49:27.286" endtime="20230802 10:49:27.287">Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.skt.nugu.apollo' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\park3\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s R5CR8050X6P shell am start -W -n com.skt.nugu.apollo/com.skt.nugu.visual.home.HomeActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 255'; Command output: 
+Exception occurred while executing 'start':
+java.lang.SecurityException: Permission Denial: starting Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.skt.nugu.apollo/com.skt.nugu.visual.home.HomeActivity } from null (pid=14411, uid=2000) not exported from uid 10468
+	at com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1305)
+	at com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1388)
+	at com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:1026)
+	at com.android.server.wm.ActivityTaskManagerService.startActivityAndWait(ActivityTaskManagerService.java:2206)
+    [ Message content over the limit has been removed. ]
+...yManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:651)
+	at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:222)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:11193)
+	at android.os.Binder.shellCommand(Binder.java:1085)
+	at android.os.Binder.onTransact(Binder.java:903)
+	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:5643)
+	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:3134)
+	at android.os.Binder.execTransactInternal(Binder.java:1321)
+	at android.os.Binder.execTransact(Binder.java:1280)
+
+    at getResponseForW3CError (C:\Users\park3\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\errors.js:1073:9)
+    at asyncHandler (C:\Users\park3\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:491:57)</status>
+</test>
+<status status="FAIL" starttime="20230802 10:49:18.513" endtime="20230802 10:49:27.295">Suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.skt.nugu.apollo' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command 'C:\\Users\\park3\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s R5CR8050X6P shell am start -W -n com.skt.nugu.apollo/com.skt.nugu.visual.home.HomeActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' exited with code 255'; Command output: 
+Exception occurred while executing 'start':
+java.lang.SecurityException: Permission Denial: starting Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.skt.nugu.apollo/com.skt.nugu.visual.home.HomeActivity } from null (pid=14411, uid=2000) not exported from uid 10468
+	at com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1305)
+	at com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1388)
+	at com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:1026)
+	at com.android.server.wm.ActivityTaskManagerService.startActivityAndWait(ActivityTaskManagerService.java:2206)
+    [ Message content over the limit has been removed. ]
+...yManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:651)
+	at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:222)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:11193)
+	at android.os.Binder.shellCommand(Binder.java:1085)
+	at android.os.Binder.onTransact(Binder.java:903)
+	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:5643)
+	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:3134)
+	at android.os.Binder.execTransactInternal(Binder.java:1321)
+	at android.os.Binder.execTransact(Binder.java:1280)
+
+    at getResponseForW3CError (C:\Users\park3\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\errors.js:1073:9)
+    at asyncHandler (C:\Users\park3\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\protocol\protocol.js:491:57)</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">General</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="ATV">ATV</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230802 10:49:27.282" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>
