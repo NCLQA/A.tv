@@ -1,0 +1,34 @@
+***** Version *****
+2.5.0(2050010)
+
+***** 수정내용 *****
+1. BAT "상하좌우 스와이프" T/C 프로그램명 Xpath 변경
+2. Basic "플레이어 > 컴포넌트 미노출 상태에서 콘텐츠 전환" T/C 프로그램명 Xpath 변경
+
+
+***** 자동화 테스트 셋팅 방법 *****
+
+1. 자동화 스크립트 폴더 열기
+비주얼 스튜디오 > 파일 > PRD or STG 폴더 열기
+
+
+2. 자동화 대상 단말명 입력
+비주얼 스튜디오 > ATV.resource 파일 > Variables의 ${deviceName} 우측에 단말명 입력
+ex) ${deviceName}    R5CR8050X6P
+
+
+3. 앱피움 서버 가동
+cmd > appium --base-path=/wd/hub 입력
+
+
+4. 테스트 실행 (A.tv앱 실행 상태에서 테스트 진행)
+비주얼 스튜디오 > 터미널 > 하기 명령어 입력
+
+- Suite 단위 테스트 : robot .\bat.robot
+- 개별 테스트 : robot --test "티씨명" .\bat.robot
+- 특정 T/C 제외 후 테스트 : robot --exclude "티씨명" .\bat.robot
+- 반복 테스트 : for ($i=1; $i -le 20; $i++) { robot --test "티씨명" .\basic.robot }
+
+
+5. Report 저장
+터미널 > robotmetrics 입력 > 스크립트 폴더 내 저장 확인 ("metrics-날짜" 형식으로 저장됨)
